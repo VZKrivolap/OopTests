@@ -1,9 +1,13 @@
 package Task;
 
-public class PCMaster {
-Computer computer;
+public class PCMaster extends  Master{
+    Home home;
 
-    public boolean turnOnOrOff(Device device){
-        return device.isTurnedOn = !device.isTurnedOn;
+    public boolean turnOnOrOff(Device device) throws MasterExeption {
+        if (device instanceof Outdoor){
+            throw new MasterExeption("PCMaster не работает с NoteBooks и NetBooks");
+        } else {
+            return device.turnOnOrOff();
+        }
     }
 }

@@ -3,6 +3,12 @@ package Task;
 public class Person {
     Device device;
     private int money;
+    private String name;
+
+    public void setDevice(Device device) {
+        this.device = device;
+    }
+
 
     public Person(Device device, int money) {
         this.device = device;
@@ -25,14 +31,30 @@ public class Person {
         this.money = money;
     }
 
-    public void sellDevice(Person person1, Person person2){
-        if (person1.device == null){
+    public void sellDevice(Person person2){
+        if (this.device == null){
             System.out.println("У продавца нет компьютера");
         } else {
-            person2.setComputer(person1.device);
-            person1.setComputer(null);
-            person1.money+=person1.device.getPrice();
-            person2.money-=person1.device.getPrice();
+            person2.setComputer(this.device);
+            this.money+=this.device.getPrice();
+            person2.money-=this.device.getPrice();
+            this.setComputer(null);
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "device=" + device +
+                ", money=" + money +
+                '}';
     }
 }
