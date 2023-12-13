@@ -61,4 +61,14 @@ public abstract class Device {
 
     public boolean turnOnOrOff(){return isTurnedOn = !isTurnedOn;}
 
+    @Override
+    public String toString() {
+        return "Device{" +
+                "ssdSize=" + ssdSize +
+                ", operationSystemName='" + operationSystemName + '\'' +
+                ", ozuSize=" + ozuSize +
+                ", price=" + price +
+                ", isTurnedOn=" + isTurnedOn +
+                '}';
+    }
 }

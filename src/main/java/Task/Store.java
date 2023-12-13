@@ -9,11 +9,9 @@ public class Store {
     Device device;
     List<Device> deviceList = new ArrayList<>();
     int balance;
-    FileWriter writer = new FileWriter("bill.txt");
 
-    public Store(int balance, String writer) throws IOException {
+    public Store(int balance)   {
         this.balance = balance;
-        this.writer = writer;
     }
 
     public int getBalance() {
@@ -32,7 +30,6 @@ public class Store {
             person.setDevice(device);
             person.setMoney(person.getMoney() - device.getPrice());
             setBalance(balance + device.price);
-            writer.write(device.toString());
         }
     }
 }

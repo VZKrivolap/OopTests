@@ -1,0 +1,1 @@
+Был продан Computer{ssdSize=500, operationSystemName='Windows', ozuSize=500, price=1000, isTurnedOn=true}
